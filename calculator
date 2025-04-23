@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calculator</title>
+    <style>
+        #calculator {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+        }
+
+        #calculator button {
+            padding: 12px 8px;
+            font-size: 18px;
+        }
+
+        #calculator input {
+            grid-column: span 4;
+            padding: 8px;
+            font-size: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="calculator">
+        <input type="text" placeholder="0">
+        <button class="num">7</button>
+        <button class="num">8</button>
+        <button class="num">9</button>
+        <button class="opr">+</button>
+
+        <button class="num">4</button>
+        <button class="num">5</button>
+        <button class="num">6</button>
+        
+
+        <button class="num">1</button>
+        <button class="num">2</button>
+        <button class="num">3</button>
+        <button class="opr">*</button>
+
+        <button class="clr">C</button>
+        <button class="num">0</button>
+        <button class="solve">=</button>
+        <button class="opr">/</button>
+    </div>
+    <script>
+        let box = document.querySelector("input");
+        let numBtns = document.querySelectorAll(".num");
+        let result = "";
+        numBtns.forEach(
+            (btn) => {
+                btn.addEventListener("click", appendNum);
+            }
+        )
+        let oprBtns = document.querySelectorAll(".opr");
+        oprBtns.forEach(
+            (btn) => {
+                btn.addEventListener("click", appendOpr);
+            }
+        )
+
+        function appendNum() {
+            result += event.srcElement.innerHTML;
+            box.value = result;
+        }
+
+        function appendOpr() {
+            result += event.srcElement.innerHTML;
+            box.value = result;
+        }
+
+        document.querySelector(".solve").addEventListener("click",
+            () => {
+                result = eval(result);
+                box.value = result;
+
+            }
+        )
+
+        document.querySelector(".clr").addEventListener("click",
+            () => {
+                result = "";
+                box.value = result;
+            }
+        )
+    </script>
+</body>
+
+</html>
