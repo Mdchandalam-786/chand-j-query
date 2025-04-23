@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button class="hide">Hide</button>
+    <button class="show">Show</button>
+    <button class="toggle">Toggle</button>
+    <button class="fadeIn">fadeIn</button>
+    <button class="fadeOut">fadeOut</button>
+    <button class="fadeToggle">fadeToggle</button>
+    <button class="slideUp">Hide</button>
+    <button class="slideDown">Hide</button>
+    <button class="slideToggle">Hide</button>
+    <hr>
+    <img src="https://newsroom.porsche.com/.imaging/mte/porsche-templating-theme/teaser_720x406x2/dam/pnr/2023/Products/911-S-T/911-S-T-studio/S23_1162_fine.jpg/jcr:content/S23_1162_fine.jpg" alt="">
+    <script  src="jquery-3.7.1.min.js"></script>
+    <script>
+        $(".hide").click(
+            function (){
+                $("img").hide(1000);
+            }
+        )
+
+        $(".show").click(
+            function (){
+                $("img").show(1000);
+            }
+        )
+
+        $(".toggle").click(
+            function (){
+                $("img").toggle(1000);
+            }
+        )
+
+    </script>
+
+</body>
+</html>
