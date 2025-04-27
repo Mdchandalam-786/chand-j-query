@@ -36,8 +36,11 @@
                 $("img").toggle(1000);
             }
         )
-
     </script>
-
+$("fadeIn").click(
+function () {
+$("img").fadeIn(1000);
+}
+)
 </body>
 </html>
